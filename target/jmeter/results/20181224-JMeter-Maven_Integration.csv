@@ -1,0 +1,8 @@
+timeStamp,elapsed,label,responseCode,responseMessage,threadName,dataType,success,failureMessage,bytes,sentBytes,grpThreads,allThreads,URL,Latency,IdleTime,Connect
+1545671239676,3065,runMAP,-1073740791,Unexpected return code.  Expected [0]. Actual [-1073740791].,runDJEngine 1-1,text,false,"Test failed: message expected to equal /
+
+****** received  : [[[Unexpected return code.  Expected [0]. Actual [-1073740791].]]]
+
+****** comparison: [[[ok                                                          ]]]
+
+/",280,0,1,1,null,0,0,0

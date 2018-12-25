@@ -1,0 +1,8 @@
+timeStamp,elapsed,label,responseCode,responseMessage,threadName,dataType,success,failureMessage,bytes,sentBytes,grpThreads,allThreads,URL,Latency,IdleTime,Connect
+1545671247870,2499,runMAP,0,OK,runDJEngine 1-1,text,false,"Test failed: message expected to equal /
+
+****** received  : [[[OK]]]
+
+****** comparison: [[[ok]]]
+
+/",499,0,1,1,null,0,0,0
