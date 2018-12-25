@@ -19,6 +19,10 @@
 						<goals>
 							<goal>jmeter</goal>
 						</goals>
+						<configuration>
+							<resultsDirectory>target/jmeter/results</resultsDirectory>
+	                        <resultsFileFormat>jtl</resultsFileFormat>
+	                    </configuration>						
 						<!-- configuration>
 							<testFilesIncluded>
 								<jMeterTestFile>TestPLan_DataConnect.jmx</jMeterTestFile>
