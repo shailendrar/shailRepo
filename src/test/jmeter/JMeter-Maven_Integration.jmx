@@ -90,7 +90,7 @@
                 <responseData>false</responseData>
                 <samplerData>false</samplerData>
                 <xml>true</xml>
-                <fieldNames>true</fieldNames>
+                <fieldNames>false</fieldNames>
                 <responseHeaders>false</responseHeaders>
                 <requestHeaders>false</requestHeaders>
                 <responseDataOnError>false</responseDataOnError>
