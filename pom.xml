@@ -20,6 +20,7 @@
 					<overrideRootLogLevel>DEBUG</overrideRootLogLevel>
 					<downloadExtensionDependencies>false</downloadExtensionDependencies>
 					<jmeterExtensions>
+						<jmeterExtension>kg.apc:jmeter-plugins-perfmon:2.1</jmeterExtension>
                         <artifact>kg.apc:jmeter-plugins-standard:jar:1.4.0</artifact>
                         <!-- artifact>kg.apc:jmeter-plugins-webdriver:jar:1.4.0</artifact-->
                         <artifact>kg.apc:jmeter-plugins-extras:jar:1.4.0</artifact>
@@ -55,7 +56,7 @@
 					</execution>
 				</executions>
 			
-			</plugin>
+			</plugin>			
 		</plugins>
 	</build>
 	<dependencies>
