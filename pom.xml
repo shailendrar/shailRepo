@@ -2,62 +2,61 @@
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
-	<groupId>Actian</groupId>
-	<artifactId>DataConnect</artifactId>
+	<groupId>com.Actian</groupId>
+	<artifactId>JmeterUsingJavaCode</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<url>http://maven.apache.org</url>
 	<build>
-		<plugins>
-			<plugin>
-				<groupId>com.lazerycode.jmeter</groupId>
-				<artifactId>jmeter-maven-plugin</artifactId>
-				<version>2.8.1</version>
-				<configuration>
-					<suppressJMeterOutput>false</suppressJMeterOutput>
-					<ignoreResultFailures>false</ignoreResultFailures>	
-					<scanResultsForFailedRequests>true</scanResultsForFailedRequests>	
-					<errorRateThresholdInPercent>10</errorRateThresholdInPercent>		
-					<overrideRootLogLevel>DEBUG</overrideRootLogLevel>
-					<downloadExtensionDependencies>false</downloadExtensionDependencies>
-					<jmeterExtensions>
-						<jmeterExtension>kg.apc:jmeter-plugins-perfmon:2.1</jmeterExtension>
-                        <artifact>kg.apc:jmeter-plugins-standard:jar:1.4.0</artifact>
-                        <!-- artifact>kg.apc:jmeter-plugins-webdriver:jar:1.4.0</artifact-->
-                        <artifact>kg.apc:jmeter-plugins-extras:jar:1.4.0</artifact>
-                        <artifact>kg.apc:jmeter-plugins-extras-libs:jar:1.4.0</artifact>
-                        <artifact>kg.apc:cmdrunner:2.2.1</artifact>
-                         <artifact>kg.apc:jmeter-plugins-graphs-additional:jar:2.0</artifact>
-                    </jmeterExtensions>			
-					<resultsDirectory>target/jmeter/results</resultsDirectory>
-					<resultsFileFormat>jtl</resultsFileFormat>
-					<generateReports>false</generateReports>
-					<!--scanResultsForSuccessfulRequests>false</scanResultsForSuccessfulRequests-->
-					<!-- Below tag is used to consider Build as failed if error rate is 
-						greater than the threshold mentioned -->
-					
-				</configuration>					
-				<executions>
-					<execution>
-						<id>jmeter-tests</id>
-						<phase>verify</phase>
-						<goals>
-							<goal>jmeter</goal>
-						</goals>
-						<!-- configuration> <testFilesIncluded> <jMeterTestFile>TestPLan_DataConnect.jmx</jMeterTestFile> 
-							</testFilesIncluded> <testResultsTimestamp>false</testResultsTimestamp> <propertiesUser> 
-							<Threadcount>1</Threadcount> <Loopcount>1</Loopcount> <Rampup>1</Rampup> 
-							</propertiesUser> </configuration -->
-					</execution>
-					<execution>
-						<id>jmeter-check-results</id>
-						<goals>
-							<goal>results</goal>
-						</goals>
-					</execution>
-				</executions>
-			
-			</plugin>			
-		</plugins>
+		<pluginManagement>
+			<plugins>
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-compiler-plugin</artifactId>
+					<version>3.8.0</version>
+					<configuration>
+						<source>1.8</source>
+						<target>1.8</target>
+					</configuration>
+				</plugin>
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-surefire-plugin</artifactId>
+					<version>3.0.0-M3</version>
+					<configuration>
+						<outputDirectory>target/surefire-report</outputDirectory>
+					</configuration>
+				</plugin>
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-surefire-report-plugin</artifactId>
+					<version>3.0.0-M3</version>
+				</plugin>				
+				<plugin>
+					<groupId>com.lazerycode.jmeter</groupId>
+					<artifactId>jmeter-maven-plugin</artifactId>
+					<version>2.8.1</version>
+					<configuration>
+						<jmeterVersion>3.2</jmeterVersion>
+						<jMeterProcessJVMSettings>
+							<xms>1024</xms>
+							<xmx>1024</xmx>
+							<arguments>
+								<argument>-Xprof</argument>
+								<argument>-Xfuture</argument>
+							</arguments>
+						</jMeterProcessJVMSettings>
+					</configuration>
+					<executions>
+						<execution>
+							<id>jmeter-tests</id>
+							<phase>test</phase>
+							<goals>
+								<goal>jmeter</goal>
+							</goals>
+						</execution>
+					</executions>
+				</plugin>
+			</plugins>
+		</pluginManagement>
 	</build>
 	<dependencies>
 		<!-- https://mvnrepository.com/artifact/com.lazerycode.jmeter/jmeter-maven-plugin -->
@@ -65,6 +64,32 @@
 			<groupId>com.lazerycode.jmeter</groupId>
 			<artifactId>jmeter-maven-plugin</artifactId>
 			<version>2.8.1</version>
+		</dependency>
+		<!-- https://mvnrepository.com/artifact/junit/junit -->
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>4.12</version>
+			<scope>test</scope>
+		</dependency>
+		<!-- https://mvnrepository.com/artifact/org.apache.jmeter/ApacheJMeter_core -->
+		<dependency>
+			<groupId>org.apache.jmeter</groupId>
+			<artifactId>ApacheJMeter_core</artifactId>
+			<version>5.0</version>
+		</dependency>
+
+		<!-- https://mvnrepository.com/artifact/org.apache.commons/commons-pool2 -->
+		<dependency>
+			<groupId>org.apache.commons</groupId>
+			<artifactId>commons-math3</artifactId>
+			<version>3.4.1</version>
+			<exclusions>
+				<exclusion>
+					<groupId>commons-math3</groupId>
+					<artifactId>commons-math3</artifactId>
+				</exclusion>
+			</exclusions>
 		</dependency>
 	</dependencies>
 </project>
