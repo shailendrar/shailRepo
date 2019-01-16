@@ -17,6 +17,7 @@
 						<target>1.8</target>
 					</configuration>
 				</plugin>
+				<!-- Adding comment for Git Repor -->
 				<plugin>
 					<groupId>org.apache.maven.plugins</groupId>
 					<artifactId>maven-surefire-plugin</artifactId>

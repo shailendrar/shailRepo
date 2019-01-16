@@ -24,6 +24,8 @@ public class JunitTest {
 		   JMeterUtils.initLogging();// you can comment this line out to see extra log messages of i.e. DEBUG level
 		   JMeterUtils.initLocale();
 
+		   
+		   
 		   // Initialize JMeter SaveService
 		   String jMVerison;
 		   jMVerison = SaveService.getVERSION(); 
