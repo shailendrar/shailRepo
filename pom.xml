@@ -34,7 +34,7 @@
 					<!--scanResultsForSuccessfulRequests>false</scanResultsForSuccessfulRequests-->
 					<!-- Below tag is used to consider Build as failed if error rate is 
 						greater than the threshold mentioned -->
-					
+				<!-- Comment added for Autframework brnach -->
 				</configuration>					
 				<executions>
 					<execution>
