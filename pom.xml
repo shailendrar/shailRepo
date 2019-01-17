@@ -6,6 +6,7 @@
 	<artifactId>DataConnect</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<url>http://maven.apache.org</url>
+	<!-- build project Comment added for Autframework brnach -->
 	<build>
 		<plugins>
 			<plugin>
@@ -34,7 +35,7 @@
 					<!--scanResultsForSuccessfulRequests>false</scanResultsForSuccessfulRequests-->
 					<!-- Below tag is used to consider Build as failed if error rate is 
 						greater than the threshold mentioned -->
-					
+				<!-- Comment added for Autframework brnach -->
 				</configuration>					
 				<executions>
 					<execution>
