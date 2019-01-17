@@ -6,6 +6,7 @@
 	<artifactId>DataConnect</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<url>http://maven.apache.org</url>
+	<!-- build project Comment added for Autframework brnach -->
 	<build>
 		<plugins>
 			<plugin>
