@@ -8,6 +8,7 @@
 	<url>http://maven.apache.org</url>
 	<!-- build project Comment added for Autframework brnach -->
 	<build>
+	<!-- plugin project Comment added for NewBranchForTrial -->
 		<plugins>
 			<plugin>
 				<groupId>com.lazerycode.jmeter</groupId>
